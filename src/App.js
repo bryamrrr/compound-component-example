@@ -1,21 +1,18 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import SimpleProcess from './components/SimpleProcess';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const steps = [
+  { label: 'Paso 1: Datos personales', component: () => <div>Contenido 1</div> },
+  { label: 'Paso 2: Datos de facturación', component: () => <div>Contenido 2</div> },
+];
+const App = () => (
+  <div>
+    <button className='btn btn-primary'>Regresar al home</button>
+    <h1>Registro de usuario</h1>
+    <SimpleProcess steps={steps} />
+  </div>
+);
 
 export default App;
